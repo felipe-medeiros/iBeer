@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Gps;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * @Entity
  */
@@ -24,6 +26,15 @@ class Fornecedor
      * @Column(type="string", nullable=false, unique=true)
      */
     private $cnpj;
+
+    /**
+     * @OneToMany(targetEntity="Bebida", mappedBy="fornecedor", orphanRemoval=true)
+     */
+    private $bebidas;
+
+    function __construct(){
+        $this->bebidas = new ArrayCollection();
+    }
 
     public function getId() : int
     {
@@ -49,4 +60,9 @@ class Fornecedor
     {
          return $this->cnpj;
     }
+
+    public function getBebidas()
+    {
+       return $this->bebidas;
+     }
 }

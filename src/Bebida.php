@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Gps;
 
+use Gps\Fornecedor;
+
 /**
  * @Entity
  */
@@ -34,6 +36,12 @@ class Bebida
      * @Column(type="float", nullable=false)
      */
     private $ml;
+
+    /**
+    * @ManyToOne(targetEntity="Fornecedor", inversedBy="bebidas")
+    */
+   private $fornecedor;
+
 
     public function getId() : int
     {
@@ -78,5 +86,15 @@ class Bebida
     public function getMl() : float
     {
          return $this->ml;
+    }
+
+    public function setFornecedor(Fornecedor $fornecedor)
+    {
+         $this->fornecedor = $fornecedor;
+    }
+
+    public function getFornecedor() : Fornecedor
+    {
+         return $this->fornecedor;
     }
 }
