@@ -1,10 +1,12 @@
 {
-    "require": {
-        "doctrine/orm": "^2.5"
-    },
     "autoload": {
-        "psr-4": {
-            "Gps\\": "src/"
-        }
+        "psr-4":  { "Gps\\": "src/" }
+    },
+    "require": {
+        "silex/silex": "~2.0",
+        "doctrine/orm": "^2.5",
+        "twig/twig": "^2.4",
+        "symfony/twig-bridge": "^3.3",
+        "symfony/asset": "^3.3"
     }
 }

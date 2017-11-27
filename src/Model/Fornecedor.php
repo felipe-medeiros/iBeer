@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Gps;
+namespace Gps\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
@@ -53,16 +53,16 @@ class Fornecedor
 
     public function setCnpj(string $cnpj)
     {
-         $this->cnpj = $cnpj;
+        $this->cnpj = $cnpj;
     }
 
     public function getCnpj() : string
     {
-         return $this->cnpj;
+        return $this->cnpj;
     }
 
     public function getBebidas()
     {
-       return $this->bebidas;
-     }
+        return $this->bebidas;
+    }
 }

@@ -1,9 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Gps;
-
-use Gps\Fornecedor;
+namespace Gps\Model;
 
 /**
  * @Entity
@@ -38,9 +36,9 @@ class Bebida
     private $ml;
 
     /**
-    * @ManyToOne(targetEntity="Fornecedor", inversedBy="bebidas")
-    */
-   private $fornecedor;
+     * @ManyToOne(targetEntity="Fornecedor", inversedBy="bebidas")
+     */
+    private $fornecedor;
 
 
     public function getId() : int
@@ -60,41 +58,41 @@ class Bebida
 
     public function setPreco(float $preco)
     {
-         $this->preco = $preco;
+        $this->preco = $preco;
     }
 
     public function getPreco() : float
     {
-         return $this->preco;
+        return $this->preco;
     }
 
     public function setMarca(string $marca)
     {
-         $this->marca = $marca;
+        $this->marca = $marca;
     }
 
     public function getMarca() : string
     {
-         return $this->marca;
+        return $this->marca;
     }
 
     public function setMl(float $ml)
     {
-         $this->ml = $ml;
+        $this->ml = $ml;
     }
 
     public function getMl() : float
     {
-         return $this->ml;
+        return $this->ml;
     }
 
     public function setFornecedor(Fornecedor $fornecedor)
     {
-         $this->fornecedor = $fornecedor;
+        $this->fornecedor = $fornecedor;
     }
 
     public function getFornecedor() : Fornecedor
     {
-         return $this->fornecedor;
+        return $this->fornecedor;
     }
 }

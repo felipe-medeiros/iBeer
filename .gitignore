@@ -1,2 +1,6 @@
-vendor/
+.idea/
+.vagrant/
+/vendor/
+*.log
+composer.phar
 db.sqlite
